@@ -5,7 +5,7 @@ class Romans:
             self._str = value
             self._num = Romans.str_to_num(value)
         elif type(value) == int:
-            self._str = ""
+            self._str = Romans.num_to_str(value)
             self._num = value
 
     def __str__(self):
@@ -33,3 +33,23 @@ class Romans:
                 result[i] *= -1
 
         return sum(result)
+
+    @staticmethod
+    def num_to_str(value):
+        values = {
+            1: "I",
+            5: "V",
+            10: "X",
+            50: "L",
+            100: "C",
+            500: "D",
+            1000: "M"
+        }
+        result = ""
+        for v in sorted(values.keys(), reverse=True):
+            unit_count = value // v
+            result += values[v] * unit_count
+            value -= unit_count * v
+
+        result = result.replace("VIIII", "IX").replace("LXXXX", "XC").replace("DCCCC", "CM")
+        return result.replace("IIII", "IV").replace("XXXX", "XL").replace("CCCC", "CD")
