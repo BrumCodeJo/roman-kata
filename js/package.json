@@ -1,0 +1,17 @@
+{
+  "name": "numerals",
+  "version": "0.0.1",
+  "description": "",
+  "main": "all.js",
+  "dependencies": {
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.2.2",
+    "karma-chrome-launcher": "~0.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}
